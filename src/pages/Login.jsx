@@ -1,28 +1,35 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Login() {
   // const[email, setEmail] = useState("");
   // const[password, setPassword] = useState("");
-  const [formdata, setFormdata] = useState({
+  const location = useLocation();
+  const [logindata, setLogindata] = useState({
     username:" ",
     password:" "
   })
   const navigate = useNavigate();
   function handlechange(e){
     e.preventDefault();
-    setFormdata({
-      ...formdata,
+    setLogindata({
+      ...logindata,
       [e.target.name]:e.target.value
   })
   }
   const formsubmit = (e) => {
+    const registerdata = location.state
     e.preventDefault();
-    alert("Login successful");
-    navigate("/dashboard",{
-      state:formdata
-    })
-    console.log(formdata);
+    console.log("Login data", logindata)
+    console.log("Register data", registerdata)
+    if(logindata.username===registerdata.name && logindata.password===registerdata.password){
+      console.log("if success")
+      navigate("/dashboard", {
+        state: logindata
+      })
+    }else{
+      console.log("Inavalid crendentials")
+    }
   }
   return (
     <>

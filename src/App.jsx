@@ -8,6 +8,11 @@ import Dashboard from './pages/Dashboard';
 import Calender  from "./pages/Calender";
 import Settings from "./pages/Settings";
 import Register from "./pages/register";
+import Admin from "./pages/Admin/adminlayout";
+import Admindashboard from "./pages/Admin/Admindashboard";
+import UserDetails from "./pages/Admin/userDetails";
+import AdminSettings from "./pages/Admin/settings";
+
 
 
 function App() {
@@ -23,6 +28,11 @@ function App() {
         <Route path="/calender" element={<Calender/>}/>
         <Route path="/settings" element={<Settings/>}/>
         <Route path="/register" element={<Register/>}/>
+        <Route path="/admin" element={<Admin />}>
+           <Route path="dashboard" element={<Admindashboard />}/>
+           <Route path="userDetails" element={<UserDetails />}/>
+           <Route path="settings" element={<AdminSettings />}/>
+        </Route>
       </Routes>
     </BrowserRouter>
   );
