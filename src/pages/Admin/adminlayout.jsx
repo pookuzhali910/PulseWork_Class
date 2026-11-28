@@ -4,7 +4,7 @@ import { Link, Outlet } from "react-router-dom";
 function Admin() {
   return (
     <div>
-      <h2>Admin Panel</h2>
+      <h2>Admin Page</h2>
 
       <nav>
         <Link to="dashboard">Dashboard</Link>

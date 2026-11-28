@@ -1,7 +1,7 @@
 function UserDetails() {
   return (
     <div>
-      <h1>User Details</h1>
+      <h1>User Details Page</h1>
     </div>
   );
 }

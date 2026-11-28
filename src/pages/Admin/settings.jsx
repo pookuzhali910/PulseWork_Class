@@ -1,7 +1,7 @@
 function AdminSettings() {
   return (
     <div>
-      <h1>Admin Settings</h1>
+      <h1>Admin Settings Page</h1>
     </div>
   );
 }
